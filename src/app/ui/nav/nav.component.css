@@ -1,0 +1,14 @@
+nav{
+    background: var(--primary);
+    color:aliceblue;
+}
+nav a{
+    font-size: 16px;
+    font-weight: 300;
+    color: aliceblue !important;
+}
+
+nav .active{
+    font-size: 16px;
+    font-weight: 500;
+}

@@ -1,0 +1,38 @@
+<app-nav></app-nav>
+<div class="form">
+    <form [formGroup]="contactForm" (ngSubmit)="save()" autocomplete="off">
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre(s)</mat-label>
+            <input matInput type="text" formControlName="name"  >
+        </mat-form-field>
+        <mat-error *ngIf="!whiteSpace">El nombre contiene espacios </mat-error><br>
+        <mat-form-field appearance="fill">
+            <mat-label>Apellidos</mat-label>
+            <input matInput type="text" formControlName="apellidos"  >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>¿Fumas?</mat-label>
+            <mat-select formControlName="fumas" >
+              <mat-option *ngFor="let item of selectItem" [value]="item">
+                {{item}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>¿Prácticas Lectura?</mat-label>
+            <mat-select formControlName="lectura" >
+              <mat-option *ngFor="let item of selectItem" [value]="item">
+                {{item}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Selecciona los libros leidos</mat-label>
+            <mat-select formControlName="lectura" [disabled]="activeSelect" >
+              <mat-option *ngFor="let item of selectLibros" [value]="item">
+                {{item}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</div>

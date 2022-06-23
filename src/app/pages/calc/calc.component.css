@@ -1,0 +1,9 @@
+.fecha{
+    padding: 30px 20px;
+}
+form button{
+    width: 100%;;
+}
+form mat-form-field{
+    width: 100%;
+}

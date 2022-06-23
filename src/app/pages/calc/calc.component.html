@@ -1,0 +1,38 @@
+<app-nav></app-nav>
+<form [formGroup]="dateForm" (ngSubmit)="calcular()" autocomplete="off">
+    <div class="fecha">
+        <div>
+            <h2>Selecciona la Fecha</h2>
+            <mat-form-field appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dateActual">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div>
+            <h2>Selecciona la cantidad a sumar</h2>
+            <mat-form-field appearance="fill">
+                <mat-label>Día</mat-label>
+                <input matInput type="number" formControlName="dateDia"  >
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Mes</mat-label>
+                <input matInput type="number" formControlName="dateMes"  >
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Año</mat-label>
+                <input matInput type="number" formControlName="dateAno" >
+            </mat-form-field>
+            
+            <button mat-flat-button color="primary" [disabled]="dateForm.invalid">Enviar</button>
+        </div>
+        <div>
+            <h2>La fecha es:</h2>
+            {{dateNew | date}}
+        </div>
+    
+    </div>
+    
+</form>

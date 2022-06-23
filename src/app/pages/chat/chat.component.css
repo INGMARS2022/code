@@ -1,0 +1,25 @@
+.banner{
+    height: calc(100% - 55px);
+    background: url('/assets/chat.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner > div{
+    text-align: center;
+}
+.banner h1{
+    font-size: 80px;
+    font-weight: 500;
+    color:aliceblue;
+}
+.banner h1 span{
+    font-weight: 600;
+    background: var(--primary);
+    padding: 0 10px;
+    border-radius: 10px;
+    margin-right: 5px;
+}

@@ -1,0 +1,19 @@
+<div class="form">
+    <form  [formGroup]="login" (ngSubmit)="logIn()" autocomplete="off">
+        <h1>Inicio de Sesión</h1>
+        <p>Ingresa con tu cuenta de prueba</p>
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput  formControlName="email" >
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput  formControlName="password">
+        </mat-form-field>
+            <button mat-flat-button color="primary" [disabled]="login.invalid">Iniciar Sesión</button>
+    </form>
+</div>
+<!-- Show spinner -->
+<div class="loading" *ngIf="spinner"><div><div class="spinner"></div></div></div>
+<app-message *ngIf="showMessages" (statusMessage)="show($event)" [typeMessage]="typeMessage" [stringMessage]="stringMessage"></app-message>
+

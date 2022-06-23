@@ -1,0 +1,21 @@
+<app-nav></app-nav>
+<div class="banner">
+    <div>
+        <h1><span>Wel</span>come</h1>
+        <p>Nos podrías indicar tu nombre</p>
+        <a (click)="show()">Escribe tu nombre</a>
+        <p *ngIf="name.length>0" class="cambio">{{name | cambioLetras  }}</p>
+    </div>
+</div>
+<div *ngIf="showModal" class="modal">
+    <div>
+        <form [formGroup]="nameForm" (ngSubmit)="enviar()" autocomplete="off">
+            <p>Ingresa tu nombre</p>
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input matInput  formControlName="name" >
+            </mat-form-field>
+            <button mat-flat-button color="primary" [disabled]="nameForm.invalid">Enviar</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="message">
+    <div *ngIf="typeMessage==true" class="true">
+            <p>{{stringMessage}}</p>
+            <span (click)="divClose()">x</span>
+    </div>
+    <div *ngIf="typeMessage==false" class="false">
+            <p>{{stringMessage}}</p>
+            <span (click)="divClose()">x</span>
+    </div>
+</div>
